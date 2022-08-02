@@ -39,10 +39,11 @@ def hanoi(n, start, end):
     if n == 1:
         print(start, end)
         return
-    hanoi(n-1, start, 6-start-end)
+    #가장 아래에 있는 원판 제외하고 나머지를 새끼 문제로 만든다 (재귀)
+    hanoi(n-1, start, 6-start-end) #기둥 번호를 계산하기 위해 1+2+3=6에서 뺸다
     print(start, end)
     hanoi(n-1, 6-start-end, end)
 
 N = int(input())
-print(2**N - 1)
+print(2**N - 1) #총 움직임
 hanoi(N, 1, 3)
