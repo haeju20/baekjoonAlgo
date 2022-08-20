@@ -48,21 +48,56 @@ while s:
 print(postfix)
 
 #10808
-
-
-#10809
-
+S = input()
+li = [0] * 26
+for i in S:
+    li[ord(i) - ord('a')] += 1
+print(*li)
 
 #10820
-
+import sys
+while True:
+    st = sys.stdin.readline().rstrip('\n')
+    if not st:
+        break
+    l, u, n, sp = 0, 0, 0, 0
+    for each in st:
+        if each.islower():
+            l += 1
+        elif each.isupper():
+            u += 1
+        elif each.isdigit():
+            n += 1
+        elif each.isspace():
+            sp += 1
+    print(l, u, n, sp)
 
 #2743
-
+s = input()
+print(len(s))
 
 #11655
-
+s = input()
+enc = ''
+for i in s:
+    if i.islower():
+        i = ord(i) + 13
+        if i > 122:
+            i -= 26
+        enc += chr(i)
+    elif i.isupper():
+        i = ord(i) + 13
+        if i > 90:
+            i -= 26
+        enc += chr(i)
+    else:
+        enc += i
+print(enc)
 
 #10824
-
+A, B, C, D = map(str, input().split())
+AB = A + B
+CD = C + D
+print(int(AB) + int(CD))
 
 #11656
