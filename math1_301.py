@@ -20,10 +20,10 @@ for i in range(len(dis)):
 print(d)
 
 #1373
-
+print(oct(int(input(),2))[2:])
 
 #1212
-
+print(bin(int(input(), 8))[2:])
 
 #2089
 
